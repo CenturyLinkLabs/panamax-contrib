@@ -55,5 +55,5 @@ coreos:
         [Service]
         Type=oneshot
         RemainAfterExit=yes
-        ExecStart=/bin/sh -c 'curl -O http://download.panamax.io/installer/pmx-installer-latest.zip && unzip pmx-installer-latest.zip -d /var/panamax'
+        ExecStart=/bin/sh -c 'curl -O http://download.panamax.io/installer/panamax-latest.tar.gz && mkdir -p /var/panamax && tar -C /var/panamax -zxvf panamax-latest.tar.gz'
         ExecStart=/bin/sh -c 'cd /var/panamax && ./coreos install --dev'
